@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Quiz</title>
+    <link rel="stylesheet" href="quiz.css" />
+  </head>
+
+  <body>
+    <header>
+      <h1>Constantinople Quiz</h1>
+      <p>History Quiz</p>
+      <div id="score">
+        Score: <span id="correct">0</span> / <span id="completed">0</span>
+      </div>
+    </header>
+
+    <main>
+      <div id="statement"></div>
+      <div id="options">
+        <button name="true" value="true">true</button>
+        <button name="false" value="false">false</button>
+      </div>
+      <div id="explanation" class="hidden"></div>
+      <button id="next-question" name="next-question">Next Question</button>
+    </main>
+    <!--PUT TAG FOR JS FILE AT THE END OF THE BODY TAG TO MAKE SURE JAVASCRIPT LOADS 
+      AND DOES NOT EXECUTE BEFORE THE DOC IS COMPLETELY LOADED (or use defer tag)-->
+    <script src="quiz.js"></script>
+  </body>
+</html>
