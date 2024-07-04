@@ -57,18 +57,24 @@ const nextButton = document.getElementById("next-question");
 const optionButtons = document.getElementById("options").children;
 
 function getNextFact() {
-  fact = facts.shift();
+  fact = facts.shift(); //get the first fact in the array (which shortens the array)
+
+  //set the question text to the current fact's statement
   document.getElementById("statement").textContent = fact.statement;
 
+//hide previous explanation 
   hide(explanation);
 
   for (let option of optionButtons) {
+    //clear previous classes
     option.classList.remove("correct");
     option.classList.remove("incorrect");
-
+    
+//make sure buttons are enabled
     enable(option);
   }
 
+  //disable 'next question' button
   disable(nextButton);
 }
 
@@ -76,6 +82,9 @@ nextButton.addEventListener("click", getNextFact);
 
 for (let option of optionButtons) {
   option.addEventListener("click", (e) => {
+    //when this option is clicked...
+
+    //disable all the option buttons
     for (let button of optionButtons) {
       disable(button);
     }
